@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE Loading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="noselect">
+    <!-- Background Video -->
+    <div class="video-background">
+        <iframe id="video-iframe" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    </div>
+
+    <!-- Main Logo -->
+    <div class="background">
+        <div class="img-center">
+            <img id="main-logo" src="">
+        </div>
+    </div>
+
+    <!-- UI Containers -->
+    <div class="menu-container">
+        <div class="arrow-up"><img src="assets/ARROW_UP.png"><span>VOLUME UP</span></div>
+        <div class="arrow-down"><img src="assets/ARROW_DOWN.png"><span>VOLUME DOWN</span></div>
+        <div class="music-change"><img src="assets/ARROW_LEFT.png"><img src="assets/ARROW_RIGHT.png"><span>CHANGE MUSIC</span></div>
+        <div class="space"><img src="assets/SPACE.png"><span id="mute-text">MUTE</span></div>
+    </div>
+
+    <div id="socials-container"></div>
+
+    <div class="scroll-box">
+        <div class="header">STAFF TEAM</div>
+        <div id="staff-list"></div>
+    </div>
+
+    <div class="textbox" id="updates-box"></div>
+    <div class="textbox2" id="info-box"></div>
+
+    <p class="namePlaceholder" id="namePlaceholder">Welcome, <span class="blue-text"></span>! <span id="welcome-message"></span></p>
+
+    <div id="circleG">
+        <div class="shaded-text">JOINING SERVER</div>
+        <div id="circleG_1" class="circleG"></div>
+        <div id="circleG_2" class="circleG"></div>
+        <div id="circleG_3" class="circleG"></div>
+    </div>
+
+    <div class="load">
+        <div class="loader">
+            <div class="stroke"></div><div class="stroke"></div><div class="stroke"></div>
+        </div>
+        <div class="songname">
+            <div class="slide-right"><p id="song-name">Loading music...</p></div>
+        </div>
+    </div>
+
+    <audio id="audio-player" loop></audio>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

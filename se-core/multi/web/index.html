@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE Core UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link Font Awesome for spawn selector icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Container for Multicharacter -->
+    <div id="main-container" style="display: none;">
+        <!-- Selection container -->
+        <div class="character-select-container">
+            <div class="header">
+                <h1>Character Select</h1>
+                <p>Select, create, or delete a character to play.</p>
+            </div>
+            <!-- Characters will be dynamically inserted here -->
+            <div id="character-list"></div>
+            <!-- Create new character button -->
+            <div class="actions">
+                <button id="create-new-btn">Create New Character</button>
+            </div>
+        </div>
+
+        <!-- Creation container -->
+        <div class="character-create-container" style="display: none;">
+            <h2>Create New Character</h2>
+            <form id="creation-form">
+                <div class="form-grid">
+                    <input type="text" id="firstname" placeholder="First Name" required>
+                    <input type="text" id="lastname" placeholder="Last Name" required>
+                    <input type="date" id="dob" required>
+                    <select id="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-create-btn">Cancel</button>
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Container for the Spawn Selection Screen -->
+    <div id="spawn-container" style="display: none;">
+        <div class="spawn-header">
+            <h1>Choose Your Spawn</h1>
+            <p>Select a location to start your journey.</p>
+        </div>
+        <div id="locations-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

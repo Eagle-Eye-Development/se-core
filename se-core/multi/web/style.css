@@ -1,0 +1,296 @@
+/* --- MULTICHARACTER STYLES --- */
+:root {
+    --overlay-bg: transparent;
+    --main-bg: transparent;
+    --card-bg: #32333f;
+    --border-color: #5a5d6e;
+    --text-primary: #ffffff;
+    --text-secondary: #c5c7d1;
+    --accent-color: #2352efe6;
+    --accent-hover: #2375efe6;
+    --success-color: #4ad991;
+    --font-family: 'Inter', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    height: 100vh;
+    width: 100vw;
+    background: transparent !important;
+    overflow: hidden;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent !important;
+    z-index: 9999;
+}
+
+.character-select-container,
+.character-create-container {
+    background: rgba(36, 37, 43, 0.75);
+    -webkit-backdrop-filter: blur(12px);
+    /*backdrop-filter: blur(12px);*/
+    padding: 2.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 900px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: transparent;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.header p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+#character-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.character-card {
+    background: rgba(50, 51, 63, 0.85);
+    -webkit-backdrop-filter: blur(6px);
+    /*backdrop-filter: blur(6px);*/
+    border-radius: 25px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-4px);
+    background: rgba(70, 71, 85, 0.9);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+.character-card .character-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+}
+
+.character-card .character-info p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+button {
+    font-family: var(--font-family);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.55rem 1.2rem;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.delete-char-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    margin-top: 1rem;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.delete-char-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.actions #create-new-btn {
+    background: rgba(35, 82, 239, 0.9);
+    -webkit-backdrop-filter: blur(4px);
+    /*backdrop-filter: blur(4px);*/
+    color: var(--text-primary);
+    padding: 0.7rem 1.5rem;
+    align-self: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.actions #create-new-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.character-create-container h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.character-create-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#creation-form input,
+#creation-form select {
+    width: 80%;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(36, 37, 43, 0.65);
+    -webkit-backdrop-filter: blur(4px);
+    /*backdrop-filter: blur(4px);*/
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+#cancel-create-btn {
+    background-color: var(--text-secondary);
+    color: #32333f;
+}
+
+#cancel-create-btn:hover {
+    background-color: #7d849b;
+}
+
+#creation-form button[type="submit"] {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+}
+
+#creation-form button[type="submit"]:hover {
+    background-color: var(--accent-hover);
+}
+
+/* --- SPAWN SELECTOR STYLES --- */
+#spawn-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(36, 37, 43, 0.85);
+    /*backdrop-filter: blur(12px);*/
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeIn 0.3s ease-out;
+    position: absolute;
+    /* The following 3 lines are the fix to center the container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spawn-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.spawn-header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.spawn-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+#locations-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.location-card {
+    background: rgba(50, 51, 63, 0.85);
+    border-radius: 25px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--accent-hover);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+

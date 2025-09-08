@@ -1,0 +1,113 @@
+/* Import the same font used in your other resources for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --text-primary: #ffffff;
+    --text-secondary: #c5c7d1;
+    --accent-color: #2352efe6;
+    --accent-hover: #3a66f2;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: transparent;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main container with a glass-like effect */
+#spawn-container {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(36, 37, 43, 0.85);
+    /*backdrop-filter: blur(12px);*/
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Header text styling */
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Grid layout for the location cards */
+#locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Individual spawn location card */
+.location-card {
+    background: rgba(50, 51, 63, 0.85);
+    border-radius: 25px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--accent-hover);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,264 @@
+/* Copied from the provided style.css, with path adjustments */
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.noselect {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.video-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+}
+
+.video-background iframe {
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-container {
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    margin-left: 1%;
+    padding-bottom: 4%;
+    color: white;
+}
+.menu-container div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.menu-container img {
+    height: 16px;
+    width: auto;
+    margin-right: 8px;
+}
+.music-change img:first-child { margin-right: 2px; }
+.space img { width: 40px; }
+
+
+.textbox, .textbox2 {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 4%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 15px 25px;
+    width: 626px;
+}
+.textbox { margin-left: 12.25%; }
+.textbox2 { margin-left: 51.33%; }
+
+.textbox .heading-textbox::before, .textbox2 .heading-textbox::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 23px;
+    background-color: #0084ff;
+    left: 15px;
+    border-radius: 20px;
+    top: 18px;
+}
+
+.blue-text { color: #0084ff; }
+
+.heading-textbox {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-center img { width: 300px; }
+
+#circleG {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 4%;
+    right: 1%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.circleG {
+    background-color:#0084ff;
+    height:10px;
+    width:10px;
+    animation: bounce_circleG 1.5s infinite linear;
+    border-radius:9px;
+    margin: 0 4px;
+}
+#circleG_1 { animation-delay:0.3s; }
+#circleG_2 { animation-delay:0.7s; }
+#circleG_3 { animation-delay:0.9s; }
+
+@keyframes bounce_circleG {
+    50% { background-color: rgb(255, 255, 255) }
+}
+
+#socials-container {
+    position: absolute;
+    top: 4%;
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-link {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    height: 55px;
+    display: block;
+}
+.social-link img { height: 100%; }
+
+.shaded-text {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+    animation: gradient-animation 5s infinite forwards;
+    width: 120px;
+    text-align: center;
+}
+
+@keyframes gradient-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.scroll-box {
+    position: absolute;
+    width: 300px;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+    top: 4%;
+    left: 1%;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+}
+
+.scroll-box .header {
+    padding: 10px;
+    background-color: #0084ffad;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+}
+.person:last-child { border-radius: 0 0 10px 10px; }
+.person img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+.person .role { font-size: 14px; }
+.role-Owner { color: #0084ff; }
+.role-Manager { color: rgb(30, 75, 255); }
+.role-Developer { color: rgb(149, 47, 245); }
+.role-Admin { color: rgb(240, 3, 248); }
+
+.date {
+    font-size: 12px;
+    margin-left: 20px;
+    color: rgba(255,255,255,0.7);
+}
+.heading-container {
+    display: flex;
+    align-items: center;
+}
+
+.load {
+    position: absolute;
+    right: 0;
+    top: 4%;
+    margin-right: 8%;
+    display: flex;
+    overflow: hidden;
+}
+
+.loader {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px 0 0 30px;
+    padding: 2.5px 6px 2.5px 5px;
+}
+.loader .stroke {
+    display: block;
+    background: #f1f1f1;
+    height: 50%;
+    width: 4px;
+    border-radius: 50px;
+    margin: 0 3px;
+    animation: animate 0.9s linear infinite;
+}
+@keyframes animate { 50% { height: 10%; } 100% { height: 50%; } }
+.stroke:nth-child(1) { animation-delay: 0s; }
+.stroke:nth-child(2) { animation-delay: 0.3s; }
+.stroke:nth-child(3) { animation-delay: 0.6s; }
+
+.songname {
+    color: white;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 30px 30px 0;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    display: flex;
+}
+.slide-right {
+    display: inline-block;
+    animation: my-animation 15s linear infinite;
+}
+@keyframes my-animation {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.namePlaceholder {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 4%;
+    left: 20%;
+    padding: 10px;
+}
+
